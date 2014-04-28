@@ -1,0 +1,26 @@
+{
+  "name": "service.display",
+  "version": "0.0.0",
+  "description": "service.display ===============",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/24hr-malmo/service.display.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/24hr-malmo/service.display/issues"
+  },
+  "homepage": "https://github.com/24hr-malmo/service.display",
+  "dependencies": {
+    "zonar": "~0.5.6",
+    "socket.io": "~0.9.16",
+    "zmq": "~2.7.0",
+    "zonar-zmq": "git+https://github.com/24hr-malmo/service.helper.git",
+    "service.helper": "git+https://github.com/24hr-malmo/service.helper.git"
+  }
+}
