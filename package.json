@@ -21,6 +21,7 @@
     "socket.io": "~0.9.16",
     "zmq": "~2.7.0",
     "zonar-zmq": "git+https://github.com/24hr-malmo/service.helper.git",
-    "service.helper": "git+https://github.com/24hr-malmo/service.helper.git"
+    "service.helper": "git+https://github.com/24hr-malmo/service.helper.git",
+    "connect": "~2.15.0"
   }
 }
