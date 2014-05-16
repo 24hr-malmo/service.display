@@ -1,26 +1,29 @@
 <!doctype html>
 <html>
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-     window.onload = function(){
-         //var socket = io.connect('http://172.16.135.109');
-         var socket = io.connect('http://localhost');
-         socket.on('updatedList', function (data) {
-             console.log(data);
-             var output = "<div>available clients<br/>";
-             for(var uuid in data){
-                 var obj = data[uuid];
-                 var d = obj.timestamp ? new Date(obj.timestamp) : new Date();
-                 output += obj.net + "." + obj.name + " (" + obj.address + ":" + obj.port + ") last updated " + formatDate(d) + " doc : " + obj.doc + "<br/>";
-             }
-             document.getElementsByTagName("body")[0].innerHTML = output + "</div>";
-         });
+    <script data-main="js/main" src="/js/lib/require.js"></script>
+    <style type="text/css">
+
+     body {
+         font-family: monospace;
      }
 
-     function formatDate(date){
-         return date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+     .description .name{
+         font-weight: bold;
      }
-    </script>
+
+     .doc-heading{
+         font-weight: bold;
+     }
+
+     .doc-content{
+         margin-top: 0px;
+     }
+
+     .row{
+         margin-bottom: 30px;
+     }
+    </style>
     <body>
     </body>
 </html>
