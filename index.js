@@ -1,3 +1,4 @@
+var config = require("./config");
 var connect = require('connect');
 var app = require('http').createServer(connect().use(connect.static(__dirname + '/public')));
 var io = require('socket.io').listen(app);
@@ -11,8 +12,8 @@ var socketioClients = [];
 
 // zonar
 var node = zonar.create({
-    name : "display",
-    net : "24hr"
+    name : config.serviceName,
+    net : config.serviceNet
 });
 
 var nodes = null;
@@ -63,7 +64,7 @@ zonarHelper.handleInterrupt(node);
 node.start();
 
 // webserver
-app.listen(8080);
+app.listen(config.servicePort);
 
 io.sockets.on('connection', function (socket) {
     io.sockets.emit('updatedList', node.getList());
