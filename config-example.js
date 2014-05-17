@@ -1,5 +1,5 @@
 module.exports = {
-    serviceName : "display",
-    serviceNet : "24hr",
-    servicePort : 8080
+    serviceName : "name",
+    serviceNet : "net",
+    servicePort : 1234
 };
