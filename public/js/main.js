@@ -3,16 +3,23 @@ requirejs.config({
     waitSeconds: 200,
     paths: {
         // libs
-        doT: 'lib/doT'
+        doT: 'lib/doT',
+        markdown: 'lib/markdown'
     },
     map: {
         '*': {
             'css': 'lib/require-css/css'
         }
+    },
+    shim : {
+        markdown : {
+            exports : "markdown"
+        }
     }
+
 });
 
-require(['domReady!', "doTTemplates"], function(_, doTTemplates){
+require(['domReady!', "doTTemplates", "markdown"], function(_, doTTemplates, markdown){
     var socket = io.connect(window.location.origin);
     socket.on('updatedList', function (data) {
         console.log(data);
@@ -26,7 +33,7 @@ require(['domReady!', "doTTemplates"], function(_, doTTemplates){
                 name : obj.net + "." + obj.name,
                 nodeAddress : obj.address,
                 updated : formatDate(d),
-                doc : obj.doc,
+                doc : markdown.toHTML(obj.doc),
                 payload : obj.payload
             });
         }
