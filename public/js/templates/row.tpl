@@ -18,7 +18,7 @@
     {{? it.doc }}
     <div class="doc">
         <span class="doc-heading">Documentation:</span>
-        <p class="doc-content">{{=it.doc}}<p>
+        <p class="doc-content">{{=it.doc}}</p>
     </div>
     {{?}}
 </div>
