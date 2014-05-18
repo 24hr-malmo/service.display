@@ -33,7 +33,7 @@ require(['domReady!', "doTTemplates", "markdown"], function(_, doTTemplates, mar
                 name : obj.net + "." + obj.name,
                 nodeAddress : obj.address,
                 updated : formatDate(d),
-                doc : markdown.toHTML(obj.doc),
+                doc : markdown.toHTML(obj.doc ? obj.doc : ""),
                 payload : obj.payload
             });
         }
