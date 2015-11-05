@@ -65,6 +65,7 @@ node.start();
 
 // webserver
 app.listen(config.servicePort);
+console.log(config.servicePort);
 
 io.sockets.on('connection', function (socket) {
     io.sockets.emit('updatedList', node.getList());

@@ -17,11 +17,10 @@
   },
   "homepage": "https://github.com/24hr-malmo/service.display",
   "dependencies": {
-    "zonar": "~0.5.6",
-    "socket.io": "~0.9.16",
-    "zmq": "~2.7.0",
-    "zonar-zmq": "git+https://github.com/24hr-malmo/service.helper.git",
+    "connect": "2.15.0",
     "service.helper": "git+https://github.com/24hr-malmo/service.helper.git",
-    "connect": "~2.15.0"
+    "socket.io": "1.3.7",
+    "zmq": "2.13.0",
+    "zonar": "0.6.3"
   }
 }
